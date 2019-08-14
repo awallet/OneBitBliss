@@ -38,12 +38,14 @@ IFLAGS  =
 LDFLAGS = -lgmpxx -lgmp -lntl -lmpfr -lgmp -lcrypto -lboost_program_options
 CXXFLAGS= -march=native -mtune=native -O3 -std=gnu++11 -Wall -I/usr/include/eigen3 -g
 
-SRCS    = main.cpp Entropy.cpp Fft.cpp KeyGen.cpp Sampler.cpp Setup.cpp Sign.cpp Verify.cpp
+SRCS    = Entropy.cpp Fft.cpp KeyGen.cpp Sampler.cpp Setup.cpp Sign.cpp Verify.cpp
 OBJS    = $(subst .cpp,.o,$(SRCS))
 
+demo: demo.o $(OBJS)
+	$(CXX) -o demo demo.o $(OBJS) $(LDFLAGS)
 
-bliss: $(OBJS)
-	$(CXX) -o bliss $(OBJS) $(LDFLAGS)
+bliss: main.o $(OBJS)
+	$(CXX) -o bliss main.o $(OBJS) $(LDFLAGS)
 
 all: bliss
 
