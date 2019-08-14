@@ -47,7 +47,7 @@ demo: demo.o $(OBJS)
 bliss: main.o $(OBJS)
 	$(CXX) -o bliss main.o $(OBJS) $(LDFLAGS)
 
-all: bliss
+all: demo bliss
 
 clean:
 	rm -f *.o bliss histo.dat
