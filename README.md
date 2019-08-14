@@ -11,7 +11,7 @@ Tancrède Lepoint. We of course take no credit for their code.
 Requires the [Eigen3](http://eigen.tuxfamily.org) library. Users of
 Debian-like distributions can install it with:
 
-  \# apt-get install libeigen3-dev
+    # apt-get install libeigen3-dev
 
 The attack demo also relies on the [rlutil](https://tapiov.net/rlutil/)
 header-only library (included, as per the terms of the [rlutil
